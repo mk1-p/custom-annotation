@@ -2,5 +2,5 @@
 
 
 slack:
-  token: ${SLACK_TOKEN}
-  channel: "#back_sys_noti"
+  token: ${SLACK_TOKEN}    # ex, xoxb-~
+  channel: ${CHANNEL_NAME} # ex, "#channel_name"
