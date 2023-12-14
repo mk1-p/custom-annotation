@@ -1,0 +1,6 @@
+
+
+
+slack:
+  token: ${SLACK_TOKEN}
+  channel: "#back_sys_noti"
