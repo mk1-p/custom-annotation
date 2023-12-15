@@ -26,7 +26,6 @@ import java.util.List;
 
 @Configuration
 // Configuration Property File 을 읽어들이기 위한 작업
-
 @ConfigurationProperties(prefix = "slack")
 @Getter
 @Setter
@@ -83,7 +82,6 @@ public class SlackConfig {
         }
 
         log.info("Slack Chat 보냄");
-        // C06AB3X8Q81
     }
 
 
