@@ -33,5 +33,4 @@ public class SlackService {
         methodsClient.chatPostMessage(request);
     }
 
-
 }

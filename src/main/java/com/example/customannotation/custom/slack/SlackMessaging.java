@@ -11,10 +11,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 public @interface SlackMessaging {
 
-    @Value("${slack.channel}")
-    String defaultChannel = "";
-
-    String channel() default defaultChannel;
+    String channel() default "#back_sys_noti";
     String title() default "Running";
     String message() default "";
     ColorType color() default ColorType.GREEN;

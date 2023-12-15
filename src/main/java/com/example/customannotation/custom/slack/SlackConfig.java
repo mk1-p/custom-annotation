@@ -35,7 +35,6 @@ import java.util.List;
 @Slf4j
 public class SlackConfig {
     private String token;
-    private String channel;
 
     /**
      * 토큰 값을 적용한 MethodsClient Bean 등록
@@ -49,40 +48,5 @@ public class SlackConfig {
 
         return methodsClient;
     }
-
-
-    /**
-     * 연결 테스트 메소드이다.
-     * @throws SlackApiException
-     * @throws IOException
-     */
-    public void connectSlackTest(MethodsClient methodsClient) throws SlackApiException, IOException {
-
-        String greenHex = "#"+Integer.toHexString(Color.GREEN.getRGB()).substring(2);
-        Attachment attachment = Attachment.builder().color(greenHex) // 메시지 색상
-                .fields( // 메시지 본문 내용
-                        List.of(Field.builder()
-                                .title("Connect")
-                                .value("success")
-                                .build()
-                        )
-                ).build();
-
-        ChatPostMessageRequest request = ChatPostMessageRequest.builder()
-                .channel(channel)
-                .iconUrl(":ghost:")
-                .text("is connectable slack!")
-                .attachments(List.of(attachment))
-                .build();
-
-        ChatPostMessageResponse response = methodsClient.chatPostMessage(request);
-
-        if (!response.isOk()) {
-            log.error("Slack is fail to connect : {}",response.getError());
-        }
-
-        log.info("Slack Chat 보냄");
-    }
-
 
 }
